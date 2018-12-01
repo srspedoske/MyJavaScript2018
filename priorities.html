@@ -58,11 +58,6 @@
       currentPriority = event.target.value
     }
 
-    function priorityLevelChange(event){
-      console.log(event.target.value)
-      currentPriorityLevel = Number(event.target.value)
-    }
-
     function makeHigherPriority(name) {
       var priority = priorities.find(p => p.name === name)
       var priorityLevel = priority.level
@@ -87,23 +82,6 @@
       drawPriorities()
     }
 
-  /*  function drawPriorities() {
-      var list = document.getElementById("priority-list")
-      var currentPriorities = priorities
-        .sort((x,y) => x.level - y.level)
-        .map(x => {
-          return `<li class="list-group-item">
-          <span class="badge badge-primary badge-pill"> ${x.level} </span>
-          <span>${x.name}</span>
-          <span class="float-buttons">
-            <button onclick="return makeHigherPriority('${x.name}')" type="button" class="btn btn-sm btn-outline-primary">Make Higher Priority</button>
-            <button onclick="return makeLowerPriority('${x.name}')" type="button" class="btn btn-sm btn-outline-secondary">Make Lower Priority</button>
-          </span>
-          </li>`
-        })
-        .join("")
-      list.innerHTML = currentPriorities
-    } */
 
   function drawPriorities() {
   var list = document.getElementById("priority-list")

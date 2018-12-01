@@ -30,10 +30,10 @@
         <label for="exampleInputEmail1">Priority</label>
         <input type="text" class="form-control" onchange="return priorityChange(event)" id="exampleInputPriority1" placeholder="Enter a priority.... like Family">
       </div>
-      <div class="form-group">
+    <!--  <div class="form-group">
         <label for="exampleInputLevel1">Priority Level</label>
-        <input type="number" class="form-control" onchange="return priorityLevelChange(event)" id="exampleInputPriorityLevel1" placeholder="Enter priority level.... like 1 or 2">
-      </div>
+        <input type="number" class="form-control" onchange="return priorityLevelChange(event)" id="exampleInputPriorityLevel1" placeholder="Enter priority level.... like 1 or 2"> 
+      </div> -->
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
     <ul id="priority-list" class="list-group"> </ul>
@@ -47,7 +47,8 @@
     var currentPriorityLevel = 1
     var priorities = []
     function addNewPriority(event){
-      priorities.push({name: currentPriority, level: currentPriorityLevel})
+      var priorityLevel = priorities.length + 1
+      priorities.push({name: currentPriority, level: priorityLevel})
       drawPriorities()
       return false;
     }

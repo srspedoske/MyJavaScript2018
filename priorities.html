@@ -59,7 +59,7 @@
 
     function priorityLevelChange(event){
       console.log(event.target.value)
-      currentPriorityLevel = event.target.value
+      currentPriorityLevel = Number(event.target.value)
     }
 
     function makeHigherPriority(name) {
@@ -73,7 +73,9 @@
 
     function makeLowerPriority(name) {
       var priority = priorities.find(p => p.name === name)
-      priority.level = priority.level + 1
+      if (priority.level < priorities.length){
+        priority.level = priority.level + 1
+      }
 
       drawPriorities()
     }
